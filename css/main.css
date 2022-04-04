@@ -1,0 +1,90 @@
+body {
+    background: #393e46;
+    color: #eeeeee;
+    text-align: left;
+    margin: auto;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.name {
+    position: fixed;
+    top: 0;
+    right: 10px;    
+}
+
+table {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+}
+
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+  
+button {
+    background: #eeeeee;
+    color: #393e46;
+    width: 80px;
+    height: 100;
+    cursor: pointer;
+    
+}
+
+
+.modal {
+    background-color: #111;
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    left: 150%;
+    height: 80vh;
+    min-width: 300px;
+    text-align: center;
+}
+.modal.open {
+    left: 50%;
+    transition: left .5s;
+}
+.modal h3{
+    color:rgb(233, 102, 102);
+    text-decoration: overline;
+    text-transform: capitalize;
+}
+/* .modal h4 span{
+    color:rgb(240, 149, 149);
+} */
+.modal > p {
+    text-align: left;
+    font-size:18px ;
+}
+
+a {
+    color: #393e46;
+}
+
+span {
+    display: inline-block;
+    text-align: right;
+    width: 30px;
+}
+
