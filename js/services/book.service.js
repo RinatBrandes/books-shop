@@ -42,7 +42,7 @@ function lastPage() {
 function setButton(selector, state){
     document.querySelector(selector).disabled = state  
     if(state) document.querySelector(selector).style.background = 'gray'
-    else document.querySelector(selector).style.background = 'yellow'
+    else document.querySelector(selector).style.background = '#78938A'
 }
 
 
@@ -53,8 +53,7 @@ function getBookById(bookId) {
 
 function updateRate(bookId, diff){
     const book = getBookById(bookId)
-    // if(book.rate === 10 && num === 1) return
-    // if(book.rate === 0 && num === -1) return
+   
     if(book.rate + diff < 0 || book.rate + diff > 10) return
     book.rate += diff
     _saveBooksToStorage()
@@ -74,8 +73,15 @@ function deleteBook(bookId) {
 }
 
 
-function addBook(name,price,url = '<a href="https://www.pixeden.com/media/k2/galleries/784/001-book-brand-cover-back-presentation-mockup-psd.jpg" target="_blank">Book</a>') {
+function addBook(name,price,url) {
 
+    var bookName = name.split(" ")    
+    var searchStr=''
+    bookName.forEach(word =>{    
+        searchStr += word + '+'
+    })
+    searchStr = searchStr.substring(0,searchStr.length-1)
+    url = '<a href="https://www.steimatzky.co.il/catalogsearch/result/?q='+searchStr + '" target="_blank">Book</a>'
     const book = _createBook(name,price,url)
     gBooks.unshift(book)
     _saveBooksToStorage()
@@ -105,6 +111,7 @@ function _createBooks() {
 }
 
 
+
 function _createBook(name,price,url) {
     return {
         id: makeId(),
@@ -112,7 +119,7 @@ function _createBook(name,price,url) {
         price,
         imgUrl: url,
         rate: 0,
-        shortDesc: makeLorem()
+        shortDesc: makeLorem(100,gCurrLang)
     }
 }
 

@@ -11,8 +11,11 @@ function makeId(length = 4) {
 
 
 
-function makeLorem(wordCount = 100) {
-    const words = ['The book', 'story', 'the children', 'love', 'the color of the balloon', 'red', 'dad', 'mam', '.', 'All', 'this happened', 'more or less', '.', 'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'in such cases', 'each time', 'it', 'was', 'a different story', '.', 'It', 'was', 'a pleasure', 'to', 'burn'];
+function makeLorem(wordCount = 100, lang) {
+  var words
+   
+  if(lang === 'he') words = ['הספר', 'סיפור', 'הילדים', 'אהבה', 'הצבע של הבלון', 'אדום', 'אבא', 'אמא', '.', 'הכל', 'זה קורה', 'פחות או יותר', '.', 'אני', 'היה לי', 'הסיפור', 'בהדרגה', 'מאנשים שונים', 'גם', 'כמו תמיד', 'קורה', 'במקרים כאלו', 'כל פעם', 'זה', 'היה', 'סיפור שונה', '.', 'תענוג',  'נשרף']
+  else words = ['The book', 'story', 'the children', 'love', 'the color of the balloon', 'red', 'dad', 'mam', '.', 'All', 'this happened', 'more or less', '.', 'I', 'had', 'the story', 'bit by bit', 'from various people', 'and', 'as generally', 'happens', 'in such cases', 'each time', 'it', 'was', 'a different story', '.', 'a pleasure', 'to', 'burn']
     var txt = '';
     while (wordCount > 0) {
         wordCount--;
